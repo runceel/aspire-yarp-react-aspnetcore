@@ -2,13 +2,12 @@
 
 var server = builder.AddProject<Projects.AspireApp9_Server>("server")
     .WithHttpHealthCheck("/health")
-    .WithHttpEndpoint(port: 5302, isProxied: false)
-    .WithHttpsEndpoint(port: 7419, isProxied: false);
+    .WithUrls(context => context.Urls.Clear());
 
 var webfrontend = builder.AddViteApp("webfrontend", "../frontend")
     .WithReference(server)
     .WaitFor(server)
-    .WithHttpEndpoint(port: 5173, isProxied: false);
+    .WithUrls(context => context.Urls.Clear());
 
 var yarp = builder.AddProject<Projects.AspireApp9_Yarp>("yarp")
     .WithReference(server)
