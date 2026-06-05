@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="AspireApp9.AppHost/AspireApp9.AppHost.csproj" />
+  <Project Path="AspireApp9.Server/AspireApp9.Server.csproj" />
+  <Project Path="AspireApp9.ServiceDefaults/AspireApp9.ServiceDefaults.csproj" />
+  <Project Path="AspireApp9.Yarp/AspireApp9.Yarp.csproj" />
+  <Project Path="frontend/frontend.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
